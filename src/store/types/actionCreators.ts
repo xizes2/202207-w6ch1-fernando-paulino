@@ -6,4 +6,8 @@ export const unknownActionNew = createAction(actionTypes.unknown);
 
 export const loadTasksActionNew = createAction<Task[]>(actionTypes.loadTasks);
 
-export const addTaskNew = createAction<Task>(actionTypes.addTask);
+export const addTaskActionNew = createAction<Task>(actionTypes.addTask);
+
+export const deleteTaskActionNew = createAction<Task["id"]>(
+  actionTypes.deleteTask
+);

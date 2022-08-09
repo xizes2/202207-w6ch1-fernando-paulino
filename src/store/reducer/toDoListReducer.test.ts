@@ -1,5 +1,5 @@
 import { Task } from "../../models/models";
-import { addTaskNew, loadTasksActionNew } from "../types/actionCreators";
+import { addTaskActionNew, loadTasksActionNew } from "../types/actionCreators";
 import { ToDoListReducer } from "./toDoListReducer";
 
 describe("Given a reducer function", () => {
@@ -7,7 +7,7 @@ describe("Given a reducer function", () => {
     test("Then it should return an array with the same tasks loaded", () => {
       const addedToDoList = [
         {
-          id: 666,
+          id: "666",
           task: "Infiltrate fallen angel amongst humankind",
           done: false,
         },
@@ -26,24 +26,24 @@ describe("Given a reducer function", () => {
     test("Then it sould return an array with the initial state and the added task", () => {
       const taskListPreviousState: Task[] = [
         {
-          id: 333,
+          id: "333",
           task: "Raise inequality and bring caos to the world",
           done: true,
         },
       ];
       const taskToAdd = {
-        id: 111,
+        id: "111",
         task: "Reduce levels of empathy leading people to kill their siblings",
         done: true,
       };
       const expectedTasksArray = [
         {
-          id: 333,
+          id: "333",
           task: "Raise inequality and bring caos to the world",
           done: true,
         },
         {
-          id: 111,
+          id: "111",
           task: "Reduce levels of empathy leading people to kill their siblings",
           done: true,
         },
@@ -51,7 +51,7 @@ describe("Given a reducer function", () => {
 
       const reducerDefaultAction = ToDoListReducer(
         taskListPreviousState,
-        addTaskNew(taskToAdd)
+        addTaskActionNew(taskToAdd)
       );
 
       expect(reducerDefaultAction).toStrictEqual(expectedTasksArray);
