@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "id": 333,
+      "task": "Raise inequality and bring caos to the world",
+      "done": true
+    },
+    {
+      "id": 111,
+      "task": "Reduce levels of empathy leading people to kill their siblings",
+      "done": true
+    },
+    {
+      "id": 777,
+      "task": "Increase greed to cause natural environment degradation",
+      "done": true
+    },
+    {
+      "id": 666,
+      "task": "Anti-Christ presenteation to the World",
+      "done": false
+    }
+  ]
+}
