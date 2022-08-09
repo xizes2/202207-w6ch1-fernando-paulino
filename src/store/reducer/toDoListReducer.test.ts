@@ -1,9 +1,5 @@
 import { Task } from "../../models/models";
-import {
-  addTaskNew,
-  tasksLoadActionNew,
-  unknownActionNew,
-} from "../types/actions";
+import { addTaskNew, loadTasksActionNew } from "../types/actionCreators";
 import { ToDoListReducer } from "./toDoListReducer";
 
 describe("Given a reducer function", () => {
@@ -19,7 +15,7 @@ describe("Given a reducer function", () => {
 
       const reducerTaskList = ToDoListReducer(
         [],
-        tasksLoadActionNew(addedToDoList)
+        loadTasksActionNew(addedToDoList)
       );
 
       expect(reducerTaskList).toStrictEqual(addedToDoList);

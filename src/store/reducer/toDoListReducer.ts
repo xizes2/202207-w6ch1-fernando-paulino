@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { Task } from "../../models/models";
-import { addTaskNew, tasksLoadActionNew } from "../types/actions";
+import { addTaskNew, loadTasksActionNew } from "../types/actionCreators";
 
 const initialToDoList: Task[] = [
   {
@@ -12,7 +12,7 @@ const initialToDoList: Task[] = [
 
 export const ToDoListReducer = createReducer(initialToDoList, (builder) => {
   builder
-    .addCase(tasksLoadActionNew, (state: Task[], action) => [...action.payload])
+    .addCase(loadTasksActionNew, (state: Task[], action) => [...action.payload])
     .addCase(addTaskNew, (state: Task[], action) => [...state, action.payload])
     .addDefaultCase((state: Task[]) => state);
 });
